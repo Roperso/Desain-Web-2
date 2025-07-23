@@ -47,7 +47,7 @@ const editUser = (id) => {
 
 const deleteUser = async (id) => {
   if (confirm('Yakin ingin memghapus user ini?')) {
-    await fetch(`https://6864ebe85b5d8d03397ed8a0.mockapi.io/users/${id}`, {
+    await fetch(`https://6880e494f1dcae717b63ddf0.mockapi.io/users/${id}`, {
       method: 'DELETE'
     })
     users.value = users.value.filter(u => u.id !== id)
@@ -55,7 +55,7 @@ const deleteUser = async (id) => {
 }
 
 onMounted(async () => {
-  const res = await fetch(`https://6864ebe85b5d8d03397ed8a0.mockapi.io/users`)
+  const res = await fetch(`https://6880e494f1dcae717b63ddf0.mockapi.io/users`)
   users.value = await res.json()
   loading.value = false
 })

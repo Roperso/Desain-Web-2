@@ -2,19 +2,19 @@
   <Layout>
     <h2 class="text-2xl font-semibold mb-4">Tambah User</h2>
 
-    <form @submit.prevent="submitUser" class="space-y-4 max-w-md mx-auto">
+    <form @submit.prevent="submitUser" class="space-y-4 max-w-md">
       <div>
-        <label class="block mb-1 font_medium">Nama:</label>
+        <label>Nama:</label>
         <input v-model="form.name" type="text" class="border p-2 rounded w-full" required />
       </div>
 
       <div>
-        <label class="block mb-1 font_medium">Email:</label>
+        <label>Email:</label>
         <input v-model="form.email" type="email" class="border p-2 rounded w-full" required />
       </div>
 
       <div>
-        <label class="block mb-1 font_medium">Avatar (URL):</label>
+        <label>Avatar (URL):</label>
         <input v-model="form.avatar" type="text" class="border p-2 rounded w-full" />
       </div>
 
@@ -39,7 +39,7 @@ const form = ref({
 const router = useRouter()
 
 const submitUser = async () => {
-  await fetch(`https://6880e494f1dcae717b63ddf0.mockapi.io/users`, {
+  await fetch('https://6880e494f1dcae717b63ddf0.mockapi.io/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

@@ -35,15 +35,15 @@ const router = useRouter()
 const form = ref({ name: '', email: '', avatar: ''})
 
 onMounted(async () => {
-    const res = await fetch (`https://6864ebe85b5d8d03397ed8a0.mockapi.io/users/${route.params.id}`)
+    const res = await fetch (`https://6880e494f1dcae717b63ddf0.mockapi.io/users/${route.params.id}`)
     const data = await res.json()
     form.value = { ...data } 
 })
 
 const updateUser = async () => {
-    await fetch(`https://6864ebe85b5d8d03397ed8a0.mockapi.io/users/${route.params.id}`, {
+    await fetch(`https://6880e494f1dcae717b63ddf0.mockapi.io/users/${route.params.id}`, {
         method: 'PUT',
-        headers: { 'Contect-type': 'application/json' },
+        headers: { 'Content-type': 'application/json' },
         body: JSON.stringify(form.value)
     })
     router.push('/')
